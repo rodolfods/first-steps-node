@@ -1,0 +1,7 @@
+Baixar os arquivos;
+Extrair no dir do node;
+Executar um "npm install" pra instalar as dependencias usadas;
+Executar "node server.js";
+Acessar do navegador o endereço "localhost:3000";
+Clicar em "Download Aqui";
+Aguardar os dowloads, escolher dir onde salvar o zip;
