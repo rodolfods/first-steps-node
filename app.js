@@ -35,9 +35,7 @@ function download(urlImage) {
 function execute() {
     const images = anexo1.images;
 
-    const promises = images.map((urlImage) => {
-        return download(urlImage);
-    });
+    const promises = images.map((urlImage) => {        return download(urlImage);    });
 
     return Promise.all(promises).then(() => {
         return new Promise((resolve, reject) => {
@@ -51,7 +49,12 @@ function execute() {
                 resolve("images.zip");
             });
 
-            archive.pipe(output);
+            archive.pipe(output, function(err){
+                if(err){
+                    console.log('Deuso');
+                    return reject();
+                }
+            });
             archive.directory('downloads/', false);
             archive.finalize();
         });
